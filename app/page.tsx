@@ -19,12 +19,75 @@ const projects = [
   },
   {
     number: '03',
-    title: 'Sameen Tariq Portfolio',
-    type: 'Interactive portfolio experience',
-    description: 'The site you are exploring now—an expressive, motion-led portfolio built to present every public GitHub project with clarity and personality.',
-    stack: ['Next.js', 'TypeScript', 'CSS Motion', 'Responsive UI', 'Firebase'],
-    accent: 'ST / 2026',
-    href: 'https://github.com/sameentariq26/SameenTariqPortfolio',
+    title: 'Courier Management System',
+    type: 'Private collaboration · Logistics platform',
+    description: 'A courier operations system for organizing deliveries, managing records, and supporting a practical logistics workflow.',
+    stack: ['PHP', 'MySQL', 'CSS', 'Web App'],
+    accent: 'CMS',
+    href: 'https://github.com/AbdulManan2420/courier-management-system',
+  },
+  {
+    number: '04',
+    title: 'Abalone',
+    type: 'Machine learning dataset',
+    description: 'A focused machine-learning dataset project built around structured Abalone data and analytical experimentation.',
+    stack: ['Machine Learning', 'Data', 'Analysis'],
+    accent: 'ML / DATA',
+    href: 'https://github.com/AbdulManan2420/abalone',
+  },
+  {
+    number: '05',
+    title: 'My Khata',
+    type: 'Mobile ledger application',
+    description: 'A convenient mobile ledger experience for recording and managing everyday account transactions on the go.',
+    stack: ['React Native', 'Expo', 'JavaScript', 'Mobile'],
+    accent: 'KHATA',
+    href: 'https://github.com/AbdulManan2420/my-khata',
+  },
+  {
+    number: '06',
+    title: 'Flappy Levels',
+    type: 'Unity game project',
+    description: 'A level-based flappy-style game exploring responsive controls, obstacles, progression, and playful interaction.',
+    stack: ['Unity', 'C#', 'Game Design'],
+    accent: 'PLAY / 06',
+    href: 'https://github.com/AbdulManan2420/flappy-levelssss',
+  },
+  {
+    number: '07',
+    title: 'Tiles SetUp',
+    type: 'Private collaboration · Storefront',
+    description: 'A Firebase-backed tile storefront with an admin dashboard for managing products and digital operations.',
+    stack: ['TypeScript', 'Firebase', 'Dashboard', 'Storefront'],
+    accent: 'TILES',
+    href: 'https://github.com/AbdulManan2420/TilesSetUp',
+  },
+  {
+    number: '08',
+    title: 'Expense Tracker',
+    type: 'Cross-platform finance app',
+    description: 'A Firebase-powered expense tracker for recording spending and keeping personal finances organized from mobile.',
+    stack: ['React Native', 'Expo', 'Firebase', 'JavaScript'],
+    accent: 'EXP / APP',
+    href: 'https://github.com/AbdulManan2420/expense-tracker-app',
+  },
+  {
+    number: '09',
+    title: 'Smart Price API',
+    type: 'AI pricing service',
+    description: 'A Python API that predicts smarter pricing for billboards through a focused machine-learning workflow.',
+    stack: ['Python', 'API', 'Machine Learning', 'Pricing'],
+    accent: 'AI / PRICE',
+    href: 'https://github.com/AbdulManan2420/SmartPriceAPI',
+  },
+  {
+    number: '10',
+    title: 'Billboard AI API',
+    type: 'Computer vision API',
+    description: 'An AI service for detecting and visualizing billboards and advertisements from visual input.',
+    stack: ['Python', 'Computer Vision', 'AI', 'API'],
+    accent: 'VISION / AI',
+    href: 'https://github.com/AbdulManan2420/billboard-ai-api',
   },
 ];
 
@@ -71,14 +134,14 @@ export default function Home() {
       <section className="work shell" id="work">
         <header className="sectionHeader">
           <div><span className="eyebrow">Selected work</span><h2>Built to be useful.<br />Designed to be felt.</h2></div>
-          <p>Every public repository on my GitHub—presented as a focused collection spanning web, mobile, and interactive design.</p>
+          <p>A growing collection spanning emergency technology, mobile products, machine learning, games, and practical digital systems.</p>
         </header>
         <div className="projectList">
           {projects.map((project) => (
             <article className="project" key={project.title}>
               <div className="projectTop"><span>{project.number}</span><span>{project.type}</span></div>
               <div className="projectBody">
-                <div className={`projectVisual ${project.number === '01' ? 'webVisual' : project.number === '02' ? 'mobileVisual' : 'portfolioVisual'}`} aria-hidden="true">
+                <div className={`projectVisual ${project.number === '01' ? 'webVisual' : project.number === '02' ? 'mobileVisual' : 'portfolioVisual repoVisual'}`} aria-hidden="true">
                   {project.number === '01' ? (
                     <>
                       <div className="visualBar"><span>{project.accent}</span><span className="liveDot">LIVE</span></div>
@@ -106,10 +169,10 @@ export default function Home() {
                     </>
                   ) : (
                     <>
-                      <div className="visualBar"><span>{project.accent}</span><span>LIVE PORTFOLIO</span></div>
+                      <div className="visualBar"><span>{project.accent}</span><span>PROJECT / {project.number}</span></div>
                       <div className="orbit orbitOne" /><div className="orbit orbitTwo" />
-                      <div className="portfolioMark"><span>S</span><i>+</i><span>T</span></div>
-                      <div className="codeRail"><span>DESIGN</span><span>BUILD</span><span>SHIP</span><span>REPEAT</span></div>
+                      <div className="portfolioMark"><span>{project.number}</span><i>+</i><span>GH</span></div>
+                      <div className="codeRail"><span>IDEA</span><span>BUILD</span><span>TEST</span><span>SHIP</span></div>
                       <span className="cursorDot" />
                     </>
                   )}
