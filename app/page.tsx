@@ -17,6 +17,15 @@ const projects = [
     accent: 'RS / APP',
     href: 'https://github.com/sameentariq26/RescueSync-Mobile',
   },
+  {
+    number: '03',
+    title: 'Sameen Tariq Portfolio',
+    type: 'Interactive portfolio experience',
+    description: 'The site you are exploring now—an expressive, motion-led portfolio built to present every public GitHub project with clarity and personality.',
+    stack: ['Next.js', 'TypeScript', 'CSS Motion', 'Responsive UI', 'Firebase'],
+    accent: 'ST / 2026',
+    href: 'https://github.com/sameentariq26/SameenTariqPortfolio',
+  },
 ];
 
 const capabilities = ['React & modern JavaScript', 'React Native & Expo', 'Node.js & Express', 'Firebase & MongoDB', 'Responsive interface design', 'Maps & real-time data'];
@@ -62,14 +71,14 @@ export default function Home() {
       <section className="work shell" id="work">
         <header className="sectionHeader">
           <div><span className="eyebrow">Selected work</span><h2>Built to be useful.<br />Designed to be felt.</h2></div>
-          <p>Two connected products exploring faster, clearer emergency response across web and mobile.</p>
+          <p>Every public repository on my GitHub—presented as a focused collection spanning web, mobile, and interactive design.</p>
         </header>
         <div className="projectList">
           {projects.map((project) => (
             <article className="project" key={project.title}>
               <div className="projectTop"><span>{project.number}</span><span>{project.type}</span></div>
               <div className="projectBody">
-                <div className={`projectVisual ${project.number === '01' ? 'webVisual' : 'mobileVisual'}`} aria-hidden="true">
+                <div className={`projectVisual ${project.number === '01' ? 'webVisual' : project.number === '02' ? 'mobileVisual' : 'portfolioVisual'}`} aria-hidden="true">
                   {project.number === '01' ? (
                     <>
                       <div className="visualBar"><span>{project.accent}</span><span className="liveDot">LIVE</span></div>
@@ -82,7 +91,7 @@ export default function Home() {
                       <div className="dispatchCard"><b>Unit 04 dispatched</b><span>ETA · 04:18</span></div>
                       <div className="signal"><i /><i /><i /></div>
                     </>
-                  ) : (
+                  ) : project.number === '02' ? (
                     <>
                       <div className="visualBar"><span>{project.accent}</span><span>EXPO 54</span></div>
                       <div className="radar"><i /><span className="radarSweep" /></div>
@@ -94,6 +103,14 @@ export default function Home() {
                         <div className="phoneNav"><i /><i /><i /></div>
                       </div>
                       <span className="floatTag tagOne">AI assessment</span><span className="floatTag tagTwo">Location live</span>
+                    </>
+                  ) : (
+                    <>
+                      <div className="visualBar"><span>{project.accent}</span><span>LIVE PORTFOLIO</span></div>
+                      <div className="orbit orbitOne" /><div className="orbit orbitTwo" />
+                      <div className="portfolioMark"><span>S</span><i>+</i><span>T</span></div>
+                      <div className="codeRail"><span>DESIGN</span><span>BUILD</span><span>SHIP</span><span>REPEAT</span></div>
+                      <span className="cursorDot" />
                     </>
                   )}
                 </div>
